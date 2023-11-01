@@ -1,0 +1,229 @@
+
+body{
+  background-color: #FFBFBF;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Lobster', cursive;
+}
+
+h1{
+   font-size:60px;
+   margin-top: 0.5px;
+   color:#79155B;
+}
+
+h2{
+  background-color: #fff;
+  border-top: 5px;
+  padding-top: 8px;
+  color:#445069;
+}
+
+.container {
+  /* backdrop-filter: blur(16px) saturate(180%); */
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: #11192840;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);  
+  padding: 70px;  
+  height:100%; 
+  filter: drop-shadow(0 30px 10px rgba(0,0,0,0.125));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:center;
+  text-align: center; 
+  vertical-align: top;
+  flex: 1;
+ }
+
+.wrapper {
+  width: 30%;
+  height: 100%;
+  border-radius: 12px;
+  background-color:#ED7B7B;
+  vertical-align: top;
+  flex: 1;
+}
+
+
+@media (max-width: 768px) {
+  .wrapper {
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .wrapper {
+    width: 100%;
+    height: auto;
+    border-radius: 0;
+  }
+}
+
+
+/* -----------------------------add----------------------------------------------------------- */
+.add{
+  font-size: 30px;
+  font-weight: 200;
+}
+
+.addinput{
+  margin-left: 10px;
+  width:200px;
+  height:30px;
+  border-color: #ED7B7B;
+  border-style:dashed;
+}
+/* ---------------------------------notodo--------------------------------------------------- */
+.notodo {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  width: 100%;
+  position: relative;
+  margin-top: 3px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@media (max-width: 768px) {
+  .notodo {
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .notodo {
+    text-align: left;
+  }
+}
+
+/* -------------------------submit button---------------------------------------------- */
+.button {
+  font-size: 40px;
+  padding: 10px 20px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* ----------------------------------list---------------------------------------------- */
+.list {
+  margin: 0;
+  padding: 0;
+  margin-left: 1rem;
+  list-style: none;
+  /* width:40%; */
+  /* word-break:break-all; */
+}
+.list li:has(input:checked) label {
+  color: hsl(200, 20%, 40%);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  width:40%;
+  word-break:break-all;
+}
+
+.list li {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.list li label {
+  display: flex;
+  gap: 0.25rem;
+  cursor: pointer;
+  align-items: center;
+  
+}
+
+.list li:has(input:focus-visible) label {
+  outline: 1px solid hsl(200, 100%, 50%);
+}
+
+.list li input {
+  outline: none;
+  width: 0;
+  height: 0;
+  appearance: none;
+  pointer-events: none;
+  position: absolute;
+  width:40%;
+  word-break:break-all;
+}
+
+.list li label::before {
+  content: "";
+  display: block;
+  width: 0.9rem;
+  height: 0.9rem;
+  background: hsl(200, 100%, 90%);
+  border-radius: 0.25em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.list li label:hover::before {
+  background: hsl(200, 100%, 80%);
+}
+
+.list li:has(input:checked) label::before {
+  content: "✔";
+  background: #445069;
+  color: hsl(200, 100%, 90%);
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.list li:has(input:checked) label:hover::before {
+  background: #445069;
+}
+
+
+
+/* --------------------------------footer--------------------------------------------------------- */
+
+
+  .footer {
+    position: sticky;
+    bottom: 0;
+    background: #111;
+    color: #fff;
+    height:auto;
+    padding-top: 30px;
+    position: relative;
+  }
+  
+  .footer-txt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.5;
+    flex: 1; /* Allow content to expand and push footer down */
+    padding: 20px;
+  }
+  
+  @media (max-width: 500px) {
+    .footer {
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+  }
+
+ 
+
